@@ -40,7 +40,7 @@ export default function MedicationDetail() {
         <StyledButton onPress={()=> router.push('/doctor_selection')}>Request refill</StyledButton>
       </View>
       {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
+      <StatusBar style={Platform.OS === "ios" ? "dark" : "auto"} />
     </View>
   );
 }

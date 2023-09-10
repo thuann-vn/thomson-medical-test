@@ -81,9 +81,9 @@ export default function DoctorSelection() {
   }, []);
 
   //Render item
-  const _renderItem = (item:any) => {
+  const _renderItem = (item: any) => {
     return (
-      <TouchableOpacity style={styles.row} onPress={()=> router.push('/video_call')}>
+      <TouchableOpacity style={styles.row} onPress={() => router.push('/video_call')}>
         <Image source={item.image} style={styles.doctorAvatar} />
         <View style={styles.doctorNameContainer}>
           <Text style={styles.doctorName}>{item.name}</Text>
@@ -96,10 +96,10 @@ export default function DoctorSelection() {
 
   return (
     <View style={styles.container}>
-      <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
+      <StatusBar style={Platform.OS === "ios" ? "dark" : "auto"} />
       <FlatList
         data={data}
-        renderItem={({ item}) => _renderItem(item)}
+        renderItem={({ item }) => _renderItem(item)}
         keyExtractor={(item) => 'doctor_' + item.id}
       />
     </View>
@@ -149,17 +149,17 @@ const styles = StyleSheet.create({
     height: 48,
     marginRight: 15
   },
-  doctorNameContainer:{
+  doctorNameContainer: {
     flex: 1,
     backgroundColor: 'transparent'
   },
-  doctorName:{
+  doctorName: {
     fontWeight: 'bold',
   },
-  doctorSpecialty:{
+  doctorSpecialty: {
     color: '#777'
   },
-  rightIcon:{
+  rightIcon: {
     fontSize: 24,
     color: '#737885'
   }

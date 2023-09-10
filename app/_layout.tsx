@@ -58,6 +58,7 @@ function RootLayoutNav() {
         screenOptions={{
           headerBackTitleVisible: false,
           headerBackImageSource: require("../assets/images/back.png"),
+          headerTintColor: '#333',
           headerStyle: {
             backgroundColor: Colors.light.background,
           },

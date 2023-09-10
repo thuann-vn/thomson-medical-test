@@ -8,7 +8,7 @@ export default function WelcomeScreen() {
   const router = useRouter();
   return (
     <View style={styles.container}>
-      <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
+      <StatusBar style={Platform.OS === "ios" ? "dark" : "auto"} />
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
