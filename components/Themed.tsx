@@ -3,7 +3,7 @@
  * https://docs.expo.io/guides/color-schemes/
  */
 
-import { Text as DefaultText, useColorScheme, View as DefaultView } from 'react-native';
+import { Text as DefaultText, useColorScheme, View as DefaultView, Switch as DefaultSwitch } from 'react-native';
 
 import Colors from '../constants/Colors';
 
@@ -14,6 +14,7 @@ type ThemeProps = {
 
 export type TextProps = ThemeProps & DefaultText['props'];
 export type ViewProps = ThemeProps & DefaultView['props'];
+export type SwitchProps = ThemeProps & DefaultSwitch['props'];
 
 export function useThemeColor(
   props: { light?: string; dark?: string },
@@ -41,4 +42,13 @@ export function View(props: ViewProps) {
   const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
 
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
+}
+
+
+export function Switch(props: SwitchProps) {
+  const { style, lightColor, darkColor, ...otherProps } = props;
+  const thumbColor = useThemeColor({ light: lightColor, dark: darkColor }, 'tint');
+  const trackColor = useThemeColor({ light: lightColor, dark: darkColor }, 'switchTrackColor');
+
+  return <DefaultSwitch thumbColor={thumbColor} trackColor={{true: trackColor, false: trackColor}} style={[{ marginVertical: -10 }, style]} {...otherProps}/>;
 }
